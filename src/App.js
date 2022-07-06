@@ -9,6 +9,7 @@ function App() {
   const [anterior, setAnterior] = useState('')
   const [actual, setActual] = useState('');
   const [operator, setOperator] = useState('');
+  const [punto, setPunto] = useState(true);
 
   const agregarInput = (e)=>{
     setActual(actual + e);
@@ -24,17 +25,25 @@ function App() {
       }
     }
   }
+  const aggPunto = (e)=>{
+    if(punto){
+      setActual(actual + e);
+      setPunto(false);
+    }
+  }
   const calcularResultado = () => {
     if(actual && anterior){
       setActual(evaluate(anterior+operator+actual));
       setOperator('');
       setAnterior('');
+      setPunto(true);
     }
   }
   const clear = () =>{
     setActual('');
     setAnterior('');
     setOperator('');
+    setPunto(true);
   }
   return (
     <div className='App'>
@@ -64,7 +73,7 @@ function App() {
         <div className='App-calc-fila'>
         <Boton manejarClic={calcularResultado}>=</Boton>
         <Boton manejarClic = {agregarInput}>0</Boton>
-        <Boton manejarClic = {agregarInput}>.</Boton>
+        <Boton manejarClic = {aggPunto}>.</Boton>
         <Boton manejarClic = {aggOperator}>/</Boton>
         </div>
         <div className='App-calc-fila'>

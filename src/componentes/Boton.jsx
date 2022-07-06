@@ -1,13 +1,13 @@
 import React from "react";
 import '../STYLE-SHEET/boton.css'
 const esOperador = (children)=>{
-    return isNaN(children) && (children != '.') && (children != '=')
+    return isNaN(children) && (children !== '.') && (children !== '=')
 }
-function Boton(props){
+function Boton({manejarClic, children}){
     return (
-      <div className={`boton-contenedor ${esOperador(props.children) ? 'Operador' : ''}`.trimEnd()}
-      onClick={() =>props.manejarClic(props.children)}>
-        {props.children}
+      <div className={`boton-contenedor ${esOperador(children) ? 'Operador' : ''}`.trimEnd()}
+      onClick={() =>manejarClic(children)}>
+        {children}
       </div>  
     );
 }
