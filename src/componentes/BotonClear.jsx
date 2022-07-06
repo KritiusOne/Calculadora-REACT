@@ -1,11 +1,11 @@
 import React from "react";
 import '../STYLE-SHEET/botonClear.css'
 
-const BotonClear = ({children, manejarClear})=>{
+const BotonClear = ({children, clear})=>{
     return(
         <div 
         className='boton-clear'
-        onClick={manejarClear}>
+        onClick={clear}>
             {children}
         </div>
     );

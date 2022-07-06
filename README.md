@@ -12,7 +12,7 @@ Esto solo es necesario para desarrollo, al momento de ejecutar en web no se soli
 
 Este proyecto está en proceso de desarrollo, por ende está sujeto a cambios tanto a nivel de codigo como de diseño.
 
-### `Notas`
+## `Notas`
 
 Este proyecto fue realizado con la guia del curso de FreeCodeCamp español de react en youtube, todos los creditos para ellos. 
 Sin embargo, este proyecto a sufrido modificaciones debido a que debo corregir algunos bugs, desarrollar algunas funcionalidades extras y cambiar el diseño.

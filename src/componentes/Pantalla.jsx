@@ -1,10 +1,10 @@
 import React from "react";
 import '../STYLE-SHEET/pantalla.css'
 
-const Pantalla = (props)=>{
+const Pantalla = ({actual, anterior, opd})=>{
     return(
         <div className="input">
-            {props.input}
+            {anterior}{opd}{actual}
         </div>
     );
 }
