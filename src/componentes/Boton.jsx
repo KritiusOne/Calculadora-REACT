@@ -5,7 +5,7 @@ const esOperador = (children)=>{
 }
 function Boton({manejarClic, children}){
     return (
-      <div className={`boton-contenedor ${esOperador(children) ? 'Operador' : ''}`.trimEnd()}
+      <div className={`app-calc-keypad-button ${esOperador(children) ? 'Operador' : ''}`.trimEnd()}
       onClick={() =>manejarClic(children)}>
         {children}
       </div>  

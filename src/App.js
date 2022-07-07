@@ -53,33 +53,29 @@ function App() {
         actual={actual}
         opd={operator}
         anterior={anterior}/>
-        <div className='App-calc-fila'>
+        <section className='app-calc-keypad'>
           <Boton manejarClic = {agregarInput}>1</Boton>
           <Boton manejarClic = {agregarInput}>2</Boton>
           <Boton manejarClic = {agregarInput}>3</Boton>
           <Boton manejarClic = {aggOperator}>+</Boton>
-        </div>
-        <div className='App-calc-fila'>
-        <Boton manejarClic = {agregarInput}>4</Boton>
-        <Boton manejarClic = {agregarInput}>5</Boton>
-        <Boton manejarClic = {agregarInput}>6</Boton>
-        <Boton manejarClic = {aggOperator}>-</Boton>
-        </div>
-        <div className='App-calc-fila'>
-        <Boton manejarClic = {agregarInput}>7</Boton>
-        <Boton manejarClic = {agregarInput}>8</Boton>
-        <Boton manejarClic = {agregarInput}>9</Boton>
-        <Boton manejarClic = {aggOperator}>*</Boton>
-        </div>
-        <div className='App-calc-fila'>
-        <Boton manejarClic={calcularResultado}>=</Boton>
-        <Boton manejarClic = {agregarInput}>0</Boton>
-        <Boton manejarClic = {aggPunto}>.</Boton>
-        <Boton manejarClic = {aggOperator}>/</Boton>
-        </div>
-        <div className='App-calc-fila'>
+          
+          <Boton manejarClic = {agregarInput}>4</Boton>
+          <Boton manejarClic = {agregarInput}>5</Boton>
+          <Boton manejarClic = {agregarInput}>6</Boton>
+          <Boton manejarClic = {aggOperator}>-</Boton>
+          
+          <Boton manejarClic = {agregarInput}>7</Boton>
+          <Boton manejarClic = {agregarInput}>8</Boton>
+          <Boton manejarClic = {agregarInput}>9</Boton>
+          <Boton manejarClic = {aggOperator}>*</Boton>
+          
+          <Boton manejarClic={calcularResultado}>=</Boton>
+          <Boton manejarClic = {agregarInput}>0</Boton>
+          <Boton manejarClic = {aggPunto}>.</Boton>
+          <Boton manejarClic = {aggOperator}>/</Boton>
           <BotonClear clear={clear}>C</BotonClear>
-        </div>
+        </section>
+        
       </div>
     </div>
   );
