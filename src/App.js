@@ -37,7 +37,7 @@ function App() {
       setActual(evaluate(anterior+operator+actual));
       setOperator('');
       setAnterior('');
-      actual.includes('.') ? setPunto(true) : setPunto(false);
+      !actual.includes('.') ? setPunto(true) : setPunto(false);
     }
   }
   const clear = () =>{
