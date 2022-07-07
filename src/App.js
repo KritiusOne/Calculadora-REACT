@@ -19,6 +19,7 @@ function App() {
       setOperator(operator + e);
       setAnterior(actual);
       setActual('');
+      setPunto(true);
     }else{
       if(anterior && actual && operator){
         calcularResultado();
@@ -36,7 +37,7 @@ function App() {
       setActual(evaluate(anterior+operator+actual));
       setOperator('');
       setAnterior('');
-      setPunto(true);
+      actual.includes('.') ? setPunto(true) : setPunto(false);
     }
   }
   const clear = () =>{
