@@ -46,6 +46,15 @@ function App() {
     setOperator('');
     setPunto(true);
   }
+  const clearSelectivo = ()=>{
+    if(actual){
+      setActual(actual.slice(0, -1));
+    }else if(operator){
+      setOperator('');
+    }else if(anterior){
+      setAnterior(anterior.slice(0, -1));
+    }
+  }
   return (
     <div className='App'>
       <div className='App-calc'>
@@ -73,7 +82,8 @@ function App() {
           <Boton manejarClic = {agregarInput}>0</Boton>
           <Boton manejarClic = {aggPunto}>.</Boton>
           <Boton manejarClic = {aggOperator}>/</Boton>
-          <BotonClear clear={clear}>C</BotonClear>
+          <BotonClear clear={clear}>Clear</BotonClear>
+          <BotonClear clear={clearSelectivo}>C</BotonClear>
         </section>
         
       </div>

@@ -1,15 +1,4 @@
 .boton-clear{
     z-index: 100;
-}
-.boton-clear::before{
-    content: 'C';
-    height: 65px;
-    width: 65px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: #fff;
-    background-color: #ff6600;
-    position: absolute;
-    border-radius: 50%;
 }
