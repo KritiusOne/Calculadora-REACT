@@ -10,6 +10,7 @@ function App() {
   const [actual, setActual] = useState('');
   const [operator, setOperator] = useState('');
   const [punto, setPunto] = useState(true);
+  let mantenimiento = [...actual];
 
   const agregarInput = (e)=>{
     setActual(actual + e);
@@ -23,6 +24,9 @@ function App() {
     }else{
       if(anterior && actual && operator){
         calcularResultado();
+      }
+      if(anterior && !operator){
+        setOperator(e);
       }
     }
   }
@@ -47,13 +51,22 @@ function App() {
     setPunto(true);
   }
   const clearSelectivo = ()=>{
+    console.log(mantenimiento);
     if(actual){
-      setActual(actual.slice(0, -1));
+      mantenimiento = mantenimiento.slice(0,-1);
+      let aux = mantenimiento.filter((x) => x === '.');
+      aux === '.' ? setPunto(false) : setPunto(true) ;
+      let ayuda = mantenimiento.join('');
+      setActual(ayuda);
     }else if(operator){
       setOperator('');
-    }else if(anterior){
-      setAnterior(anterior.slice(0, -1));
+      let aux = [...anterior];
+      let ayuda = aux.filter((x) => x === '.');
+      ayuda ? setPunto(false) : setPunto(true);
+      setActual(anterior);
+      setAnterior('');
     }
+    console.log(mantenimiento);
   }
   return (
     <div className='App'>
