@@ -1,7 +1,8 @@
 .app-calc-keypad{
+	height: 50%;
 	display: grid;
-	grid-template-columns: repeat(4, 100px);
-	grid-template-rows: repeat(5, 65px);
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(5, 1fr);
 	border: none;
 	font-size: 20px;
 	text-align: center;
@@ -15,8 +16,22 @@
 	align-items: center;
 	color: #fff;
 	border-radius: 50%;
+	user-select: none;
+}
+.app-calc-keypad-button:hover{
+	background-color: #88888811;
 }
 .Operador{
 	color: #ff6600;
 	text-align: center;
+}
+.Operador:hover{
+	background-color: #fff;
+}
+
+@media (max-width: 800px){
+	.app-calc-keypad{
+		grid-template-columns: repeat(4, 85px);
+		grid-template-rows: repeat(5, 55px);
+	}
 }

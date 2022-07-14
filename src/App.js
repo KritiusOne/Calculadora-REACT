@@ -31,17 +31,20 @@ function App() {
     }
   }
   const aggPunto = (e)=>{
-    if(punto){
+    let aux = mantenimiento.filter((x) => x=== '.');
+    console.log(aux);
+    if(punto && aux.length === 0){
       setActual(actual + e);
       setPunto(false);
     }
+    console.log(aux);
   }
   const calcularResultado = () => {
     if(actual && anterior){
-      setActual(evaluate(anterior+operator+actual));
+      setAnterior(evaluate(anterior+operator+actual));
       setOperator('');
-      setAnterior('');
-      !actual.includes('.') ? setPunto(true) : setPunto(false);
+      setActual('');
+      setPunto(true);
     }
   }
   const clear = () =>{
@@ -62,9 +65,10 @@ function App() {
       setOperator('');
       let aux = [...anterior];
       let ayuda = aux.filter((x) => x === '.');
-      ayuda ? setPunto(false) : setPunto(true);
+      ayuda[0] === '.'? setPunto(false) : setPunto(true);
       setActual(anterior);
       setAnterior('');
+      console.log(ayuda);
     }
     console.log(mantenimiento);
   }
