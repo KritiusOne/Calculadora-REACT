@@ -9,7 +9,6 @@ function App() {
   const [anterior, setAnterior] = useState('')
   const [actual, setActual] = useState('');
   const [operator, setOperator] = useState('');
-  const [punto, setPunto] = useState(true);
   let mantenimiento = [...actual];
 
   const agregarInput = (e)=>{
@@ -20,7 +19,6 @@ function App() {
       setOperator(operator + e);
       setAnterior(actual);
       setActual('');
-      setPunto(true);
     }else{
       if(anterior && actual && operator){
         calcularResultado();
@@ -32,45 +30,32 @@ function App() {
   }
   const aggPunto = (e)=>{
     let aux = mantenimiento.filter((x) => x=== '.');
-    console.log(aux);
-    if(punto && aux.length === 0){
+    if(aux.length === 0){
       setActual(actual + e);
-      setPunto(false);
     }
-    console.log(aux);
   }
   const calcularResultado = () => {
     if(actual && anterior){
       setAnterior(evaluate(anterior+operator+actual));
       setOperator('');
       setActual('');
-      setPunto(true);
     }
   }
   const clear = () =>{
     setActual('');
     setAnterior('');
     setOperator('');
-    setPunto(true);
   }
   const clearSelectivo = ()=>{
-    console.log(mantenimiento);
     if(actual){
       mantenimiento = mantenimiento.slice(0,-1);
-      let aux = mantenimiento.filter((x) => x === '.');
-      aux === '.' ? setPunto(false) : setPunto(true) ;
       let ayuda = mantenimiento.join('');
       setActual(ayuda);
     }else if(operator){
       setOperator('');
-      let aux = [...anterior];
-      let ayuda = aux.filter((x) => x === '.');
-      ayuda[0] === '.'? setPunto(false) : setPunto(true);
       setActual(anterior);
       setAnterior('');
-      console.log(ayuda);
     }
-    console.log(mantenimiento);
   }
   return (
     <div className='App'>
