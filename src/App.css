@@ -16,6 +16,7 @@ html, body{
 }
 .App-calc{
   width: 400px;
+  min-width: 300px;
   height: 600px;
   padding: 14px;
   background-color: #000;

@@ -9,6 +9,7 @@
 	background-color:#171616;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
+	min-width: 300px;
 }
 .app-calc-keypad-button{
 	display: flex;
@@ -31,7 +32,7 @@
 
 @media (max-width: 800px){
 	.app-calc-keypad{
-		grid-template-columns: repeat(4, 85px);
+		grid-template-columns: repeat(4, 1fr);
 		grid-template-rows: repeat(5, 55px);
 	}
 }
